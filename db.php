@@ -1,17 +1,14 @@
 <?php
-
-class db{
+class db {
     protected $connection;
 
-    function setconnection(){
-        try{
+    function setconnection() {
+        try {
             $this->connection = new PDO("mysql:host=localhost;dbname=library_managment_system", "root", "");
-            //echo "Connection Done";
-           
-
-        }catch(PDOException $e){
-            echo "Error";
-        }
-
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
         }
     }
+}
+?>

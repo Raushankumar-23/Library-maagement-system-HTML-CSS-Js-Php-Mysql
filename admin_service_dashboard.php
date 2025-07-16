@@ -369,7 +369,5 @@ function openpart(sectionId) {
   </div>
 </div>
 
-
-
 </body>
 </html>
